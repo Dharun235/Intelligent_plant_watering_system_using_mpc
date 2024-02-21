@@ -3,3 +3,5 @@ Theory
 Formula for water flow:
 
 Adjusted Water Input (WI) = k ⋅ ( Desired Soil Moisture − Current Soil Moisture ) ⋅ ( 1 + kT ⋅ ( Temperature − Reference Temperature ) ) ⋅ ( 1 + kH ⋅ ( Humidity − Reference Humidity ) )
+
+Moisture level required for Lemon - 21 % to 40 %
