@@ -1,66 +1,66 @@
 The control system code you provided is an implementation of Model Predictive Control (MPC) for an automatic water management system for a plant. Here's the breakdown of the key components and concepts:
 
-1. ##Objective Function:
+1. Objective Function:
    - The MPC algorithm aims to minimize a cost or objective function, representing the system's performance.
    - In this case, the objective function includes terms related to soil moisture control and penalties for deviations from target environmental conditions (temperature, humidity, and light level).
 
-2. ##Parameters and Targets:
+2. Parameters and Targets:
    - The code defines various parameters and target values that the control system aims to achieve.
    - Parameters include MPC horizon, time step, maximum watering duration, and acceptable soil moisture range.
    - Target values include desired soil moisture, temperature, humidity, and light level.
 
-3. ##Minimization Problem:
+3. Minimization Problem:
    - The MPC algorithm formulates the water management problem as a minimization problem.
    - The `objective_function` function calculates the total cost, including soil moisture control and penalties for environmental deviations.
 
-4. ##Constraints:
+4. Constraints:
    - Constraints are imposed to ensure that the optimization problem remains feasible.
    - Constraints include limits on watering duration and acceptable soil moisture levels.
 
-5. ##Optimization Solver:
+5. Optimization Solver:
    - The optimization problem is solved using the `scipy.optimize.minimize` function.
    - The result provides optimal watering actions for the specified horizon.
 
-6. ##MPC Control Loop:
+6. MPC Control Loop:
    - The `mpc_control` function is the main MPC control loop.
    - It calls the optimization solver to get optimal watering actions.
    - It logs sensor data, watering actions, and variables to a CSV file.
 
-7. ##Sensor Data and Logging:
+7. Sensor Data and Logging:
    - The code expects sensor data from soil moisture, temperature, humidity, and light level sensors.
    - The `log_to_csv` function is responsible for logging data to a CSV file.
    - Sensor data is logged along with the current date and time in the local timezone (Asia/Kolkata).
 
-8. ##Solenoid Valve Control:
+8. Solenoid Valve Control:
    - The `control_solenoid_valve` function simulates the control of a solenoid valve based on the calculated watering action.
    - If the watering action is greater than zero, it simulates opening and closing the solenoid valve for the specified duration.
 
-9. ##Main Loop:
+9. Main Loop:
    - The main loop continuously performs MPC control, logs data, and simulates solenoid valve control.
    - It includes a delay (1 hour in this case) between iterations.
 
-10. ##Exception Handling:
+10. Exception Handling:
     - The code includes exception handling to gracefully handle unexpected errors.
     - It terminates the program when manually interrupted (e.g., by keyboard input).
 
 This MPC control system integrates optimization techniques to dynamically adjust watering actions based on sensor data and environmental conditions, providing a framework for efficient plant care. The system aims to maintain soil moisture within a desired range while considering other environmental factors. The real-time sensor data and control actions are logged for analysis and monitoring.
 
-##Choosing weights
+Choosing weights
 
 For a lemon plant, here are some general guidelines on assigning weights to environmental factors in the MPC algorithm:
 
-###Temperature Weight (temperature_weight):
+Temperature Weight (temperature_weight):
 Lemons generally thrive in temperatures between 70°F to 85°F (21°C to 29°C).
 If maintaining optimal temperature is crucial for your lemon plant, assign a higher weight.
 Example: temperature_weight = 1.0
 
-###Humidity Weight (humidity_weight):
+Humidity Weight (humidity_weight):
 
 Lemons prefer humidity levels between 40% to 60%.
 Assign a weight based on the importance of humidity for your lemon plant.
 Example: humidity_weight = 0.5
 
-###Light Weight (light_weight):
+Light Weight (light_weight):
 
 Lemon plants require plenty of sunlight, ideally around 8-12 hours of direct sunlight per day.
 If providing optimal light conditions is crucial, assign a higher weight.
