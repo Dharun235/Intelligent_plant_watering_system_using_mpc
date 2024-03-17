@@ -6,6 +6,4 @@ MPC code - Example code containing MPC algorithm, adaptable for cloud based serv
 
 Data collection - Code for data collection via arduino
 
-Use pyserial for pc based system for integrating arduino and python and try to remove the delay of 1 hour.
-
 
