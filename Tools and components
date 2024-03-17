@@ -1,0 +1,25 @@
+Solenoid control
+1. Solenoid valve  12V / 0.4 A NC - 1
+2. 5v single channel relay module - 1
+
+General 
+1. Breadboard - 1
+2. 12 volt adapter - 1 
+3. Connecting wires (as required)
+4. 12 v DC power jack - 1
+5. USB 2.0 cable type A/B - 1
+6. Arduino UNO - 1
+
+Light sensor
+1. Photoresistor - 1
+2. 10k Resistor - 1
+
+Water level monitoring in tank
+1. HW-038 water level sensor - 1
+
+Water pump 
+1. 5v pump - 1
+2. vinyl tube - 1
+
+Temperature and humidity sensor
+1. 10k resistor - 1
